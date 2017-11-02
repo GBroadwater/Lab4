@@ -1,4 +1,10 @@
 package app;
+/*
+Broadwater, Geoffrey
+Moglia, David
+Walker, Julia
+All members participated equally
+*/
 
 import java.io.IOException;
 
