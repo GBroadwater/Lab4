@@ -1,12 +1,20 @@
 package pkgCore;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.UUID;
 
-public class Table {
+public class Table{
+
+	public UUID getTableID() {
+		return TableID;
+	}
+
+	public HashMap<UUID, Player> getPlayersInTable() {
+		return PlayersInTable;
+	}
 
 	private UUID TableID;
-	private ArrayList<Player> PlayersInTable = new ArrayList<Player>();
+	private HashMap<UUID, Player> PlayersInTable = new HashMap<UUID, Player>();
 	
 	public Table() {
 		super();
@@ -15,16 +23,17 @@ public class Table {
 	
 	public void AddPlayerToTable(Player p)
 	{
-		//TODO: Implement this method
+		this.PlayersInTable.put(p.getPlayerID(),p);
 	}
 	public void RemovePlayerFromTable(Player p)
 	{
-		//TODO: Implement this method		
+		this.PlayersInTable.remove(p.getPlayerID());		
 	}
 	
 	public Player GetPlayerFromTable(Player p)
 	{
-		//TODO: Implement this method	
-		return null;
+		return this.PlayersInTable.get(p.getPlayerID());
+		
 	}
+	
 }
